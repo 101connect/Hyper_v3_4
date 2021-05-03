@@ -6,7 +6,7 @@ var args = require('yargs').argv;
  * ---------------------------------------------------------------------------------------------
 */
 
-const DEFAULT_DEMO = 'saas';
+const DEFAULT_DEMO = 'html';
 const AVAILABLE_DEMOS = ['saas','modern','creative'];
 
 var FOLDER_PATHS = {
