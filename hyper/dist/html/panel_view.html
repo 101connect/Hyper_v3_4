@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Core Module</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- App favicon -->
+        <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
+        <!-- css -->
+        <link href="Bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="icons.min.css" rel="stylesheet" type="text/css"/> -->
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <script src=jquery.min.js></script>
+        <script src=bootstrap.bundle.min.js></script>
+        
+
+     </head>   
+     
+               <!-- Begin page -->
+        <div class="wrapper">
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left-side-menu">
+                <div class="slimscroll-menu">
+                    <!-- LOGO -->
+                    <a href="main.html" class="logo text-center">
+                        <span class="logo-lg">
+                         <img class="align-top" src="Critical-Power-Services-Logo.jpg" alt="" height="75">
+                        </span>
+                        <span class="logo-sm">
+                         <img class="align-top" src="Critical-Power-Services-Logo.jpg" alt="" height="75">
+                        </span>
+                    </a>
+                    <!--- Sidemenu -->
+                    <ul class="metismenu side-nav pt-3">
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="system.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> System </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="config.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Configuration </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="branch_circuit_view.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Branch View </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="panel_view.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Panel View </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="waveform.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Waveform View </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="javascript: void(0);" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Guide </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="javascript: void(0);" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Help </span></a></li>
+                    </ul>
+                    <!-- End Sidebar -->
+                    <div class="clearfix"></div>
+                </div>
+                <!-- Sidebar -left -->
+            </div>
+            <!-- Left Sidebar End -->
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title"> Panel View </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+                        <div class="row">
+                            <div class="col-xl-12">
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="card widget-flat">
+                                            <div class="card-body">
+                                                <h5 class="text-muted font-weight-normal mt-0 font-weight-bold" title="Growth">PANEL SUMMARY</h5>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Panel Name</span>
+                                                    <span class="text-nowrap">Panel A01</span>
+                                                </p>
+                                                 <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Monitor:</span>
+                                                    <span id="MAC" class="text-nowrap">70B3D57F50A2</span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Time:</span>
+                                                    <span class="text-nowrap" id=Time>XX:XX:XX</span>
+                                                </p>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col--> 
+                                </div> <!-- end row -->
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+<!-----table html start----->
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                 
+                                   <table class="table table-centered mb-0 table-striped table-bordered" id=myHTMLWrapper>
+                                  
+                <thead >
+                    <tr>
+                    <td align="right" width="50"><b> Variable</b></td> 
+                    
+                    <td align="center" width="70"><b> L1</td>
+                    <td align="center" width="70"><b> L2</td>
+                    <td align="center" width="70"><b> L3</td>
+                    <td align="center" width="70"><b> Avg/Tot</td>
+                    </tr>
+                </thead>
+                        <td align=right><b>kWH</b>
+                        <td align=center id=kWHL1>
+                        <td align=center id=kWHL2>
+                        <td align=center id=kWHL3>
+                        <td align=center id=kWHtot>
+                    <tr>
+                        <td align=right><b>Voltage</b>
+                        <td align=center id=VoltsLN1>
+                        <td align=center id=VoltsLN2>
+                        <td align=center id=VoltsLN3>
+                        <td align=center id=VoltsLNAvg>
+                    <tr>
+                        <td align=right><b>Current</b>
+                        <td align=center id=AmpsL1>
+                        <td align=center id=AmpsL2>
+                        <td align=center id=AmpsL3>
+                        <td align=center id=AmpsAvg>
+                    <tr>
+                        <td align=right><b>kW</b>
+                        <td align=center id=kWL1>
+                        <td align=center id=kWL2>
+                        <td align=center id=kWL3>
+                        <td align=center id=kWAvg>
+                    <tr>
+                        <td align=right><b>kVA</b>
+                        <td align=center id=kVAL1>
+                        <td align=center id=kVAL2>
+                        <td align=center id=kVAL3>
+                        <td align=center id=kVAAvg>
+                    <tr>
+                        <td align=right><b>kVAR</b>
+                        <td align=center id=kVARL1>
+                        <td align=center id=kVARL2>
+                        <td align=center id=kVARL3>
+                        <td align=center id=kVArAvg>
+                    <tr>
+                        <td align=right><b>Power Factor</b>
+                        <td align=center id=PFL1>
+                        <td align=center id=PFL2>
+                        <td align=center id=PFL3>
+                        <td align=center id=PFAvg>
+                    <tr>
+                        <td align=right><b>THDV</b>
+                        <td align=center id=THDVL1>
+                        <td align=center id=THDVL2>
+                        <td align=center id=THDVL3>
+                        <td align=center id=THDVAvg>
+                    <tr>
+                        <td align=right><b>THDI</b>
+                        <td align=center id=THDIL1>
+                        <td align=center id=THDIL2>
+                        <td align=center id=THDIL3>
+                        <td align=center id=THDIAvg>
+               
+                    </table>
+                    </div>             
+                </div> <!-- end col-->
+            </div><!-- end row -->
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+        <!-- Right Sidebar -->
+        
+</body>
+</html>

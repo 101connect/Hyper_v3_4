@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Core Module</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+       <!-- App favicon -->
+        <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
+        <!-- css -->
+        <link href="Bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="icons.min.css" rel="stylesheet" type="text/css"/>  -->
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <script src=jquery.min.js></script>
+        <script src=bootstrap.bundle.min.js></script>
+        <script src=MeterInfo.js></script>
+        <!-- css end -->
+    </head>
+    <body onload=GetSystemSettings()>
+        
+        <!-- Begin page -->
+        <div class="wrapper">
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left-side-menu">
+                <div class="slimscroll-menu">
+                    <!-- LOGO -->
+                    <a href="main.html" class="logo text-center">
+                        <span class="logo-lg">
+                             <img class="align-top" src="Critical-Power-Services-Logo.jpg" alt="" height="75">
+                        </span>
+                        <span class="logo-sm">
+                            <img class="align-top" src="Critical-Power-Services-Logo.jpg" alt="" height="75">
+                        </span>
+                    </a>
+                    <!--- Sidemenu -->
+                    <ul class="metismenu side-nav pt-3">
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="system.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> System </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="config.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Configuration </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="branch_circuit_view.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Branch View </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="panel_view.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Panel View </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="waveform.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Waveform View </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="javascript: void(0);" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Guide </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="javascript: void(0);" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Help </span></a></li>
+                    </ul>
+                    <!-- End Sidebar -->
+
+                    <div class="clearfix"></div>
+
+                </div>
+                <!-- Sidebar -left -->
+
+            </div>
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    
+                   <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <div class="page-title-box">
+                                    <h3 class="page-title"> System Settings </h3>
+                                </div>
+                            </div>
+                             <div class="col-6 export-button">
+                                    <!-- <a data-toggle=modal data-target=#UpdateNetworkModal class="btn float-right text-uppercase font-weight-bold px-4 py-2 rounded-corner rounded text-white" role="button">Save Settings</a> -->
+                                     <a data-toggle=modal data-target=#UpdateNetworkModal class="btn float-right text-uppercase font-weight-bold px-4 py-2 rounded-corner rounded " role="button">Save Settings</a>
+                                    <p>
+                                    <a id=UpdateStatusBack></a>
+                            </div>
+                        </div>
+                        <!-- define the modal save button -->
+
+                        <div class="fade modal" id=UpdateNetworkModal role=dialog>
+                            <div class="modal-dialog modal-sm">
+                                <div class=modal-content>
+                                    <div class=modal-header>
+                                    <button class=close type=button data-dismiss=modal>×</button>
+                                    <h4 class=modal-title>Save Settings</h4>
+                                    </div>
+                                    <div class=modal-footer>
+                                    <button class="btn btn-default" type=button data-dismiss=modal onclick=networkchange()>Apply Changes</button>
+                                    <button class="btn btn-default" type=button data-dismiss=modal>Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end of modal save button -->
+
+                       
+                            <div class="col-xl-12">
+
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <h4 class="page-title"> Network </h4>
+                                        <div class="card widget-flat">
+                                            <div class="card-body">
+                                               <!--  <h5 style=text-align:left>Network Settings</h3> -->
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">DHCP:</span>
+                                                    <span id="ipmode" class="text-nowrap"><label>
+                                                        <label>
+                                                            <input id=dhcpenable name=dhcpradio onchange=dhcpchange() type=radio>On
+                                                        </label>
+                                                        <label>
+                                                            <input id=manualconfig name=dhcpradio onchange=dhcpchange() type=radio>Off
+                                                        </label>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">IP Address:</span><br>
+                                                    <span  class="text-nowrap"><input id=IPV4ADDRESS class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">NetMask:</span><br>
+                                                    <span  class="text-nowrap"><input id=IPV4MASK class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Gateway:</span><br>
+                                                    <span  class="text-nowrap"><input id=IPV4GATEWAY class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">DNS:</span><br>
+                                                    <span  class="text-nowrap"><input id=IPV4DNS1 class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col-->
+
+                                
+                            <div class="col-lg-3">
+                                <h4 class="page-title"> Protocol </h4>
+                                <div class="card widget-flat">
+                                            <div class="card-body">
+                                               <!--  <h5 style=text-align:left>Network Settings</h3> -->
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Modbus Slave ID:</span><br>
+                                                    <span  class="text-nowrap"><input id=SERIALADDRESS class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">BacNET ID:</span><br>
+                                                    <span  class="text-nowrap"><input id=BACnetID class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">BACnet Port:</span><br>
+                                                    <span  class="text-nowrap"><input id=BACnetPort class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">BACnet Virtual Network:</span><br>
+                                                    <span  class="text-nowrap"><input id=BACnetVirtNet class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">NTP Time Server:</span><br>
+                                                    <span  class="text-nowrap"><input id=IPV4NTP class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                
+                                                
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end column entry -->
+
+                            <div class="col-lg-3">
+                                <h4 class="page-title"> General </h4>
+                                <div class="card widget-flat">
+                                            <div class="card-body">
+                                               <!--  <h5 style=text-align:left>Network Settings</h3> -->
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Demand Interval</span><br>
+                                                    <span class="mr-2 font-weight-bold">(0-3600 seconds):</span><br>
+                                                    <span class="text-nowrap"><input id=DemandInterval class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Sub Intervals (1-6):</span><br>
+                                                    <span class="text-nowrap"><select id=DemandSubInt>
+                                                        <option id=DemandSubInt1>1</option>
+                                                        <option id=DemandSubInt2>2</option>
+                                                        <option id=DemandSubInt3>3</option>
+                                                        <option id=DemandSubInt4>4</option>
+                                                        <option id=DemandSubInt5>5</option>
+                                                        <option id=DemandSubInt6>6</option>
+                                                    </select></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Point Map:</span><br>
+                                                    <span class="text-nowrap"><select id=PointMap>
+                                                    <option id=CMPointMap>Core Module Point Map</option>
+                                                    <option id=BCPMPointMap>Schneider Point Map</option>
+                                                </select></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Serial Baud Rate:</span><br>
+                                                    <span class="text-nowrap">
+                                                        <select id=BaudRate>
+                                                            <option id=BAUD9600>9600</option>
+                                                            <option id=BAUD19200>19200</option>
+                                                            <option id=BAUD38400>38400</option>
+                                                            <option id=id=BAUD57600>57600</option>
+                                                            <option id=BAUD115200>115200</option>
+                                                        </select>
+                                                    </span>
+                                   
+                                                </p>
+                                                
+                                                
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end column entry -->
+                                    <div class="col-lg-3">
+                                <h4 class="page-title"> More Settings </h4>
+                                <div class="card widget-flat">
+                                            <div class="card-body">
+                                               <!--  <h5 style=text-align:left>Network Settings</h3> -->
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">PT Ratio</span><br>
+                                                     <span class="mr-2 font-weight-bold">(600:240 = 2.5):</span><br>
+                                                    <span  class="text-nowrap"><input id=ptratio class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Over Voltage Threshold:</span><br>
+                                                    <span  class="text-nowrap"><input id=overvoltthreshold class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Over Voltage Time Delay:</span><br>
+                                                    <span  class="text-nowrap"><input id=overvolttimedelay class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Under Voltage Threshold:</span><br>
+                                                    <span  class="text-nowrap"><input id=undervoltthreshold class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Under Voltage Time Delay:</span><br>
+                                                    <span  class="text-nowrap"><input id=undervolttimedelay class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end column entry -->
+                                </div> <!-- end of first row -->
+
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <h4 class="page-title"> System </h4>
+                                        <div class="card widget-flat">
+                                            <div class="card-body">
+                                               <!--  <h5 style=text-align:left>Network Settings</h3> -->
+                                                <p class="mb-0 text-muted">
+                                                	<span class="mr-2 font-weight-bold">Save Settings:</span><br>
+                                                    <span  class="text-nowrap"><button class="btn btn-default" type=button data-toggle="modal" data-target=#SaveSettingsformModal>Save Settings</button></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                	<span class="mr-2 font-weight-bold">Update Firmware:</span><br>
+                                                    <span  class="text-nowrap"><button class="btn btn-default" type=button data-toggle="modal" data-target=#firmwareupdateformModal>Update Firmware</button></span><br>
+                                                    <span  class="text-nowrap">
+                                                        <form action="/" method="post" enctype="multipart/form-data" id="form-id">
+                                                            <p><input id="file-id" type="file" name="our-file"/><br>
+                                                                <input type="button" value="Upload to USB" id="upload-button-id" disabled="disabled" /></p>
+                                                                <p id="upload-status"></p>
+                                                                  <p id="progress"></p>
+                                                                  <p id="result"></p>
+                                                                  </form>
+                                                    </span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                	<span class="mr-2 font-weight-bold">Restart Core Module:</span><br>
+                                                    <span  class="text-nowrap"><button class="btn btn-default" type=button data-toggle="modal" data-target=#ResetformModal>Reboot Core Module</button></span>
+                                                </p>
+
+
+                            </div>
+
+
+                           
+                        
+                        
+                    </div><!-- container --> 
+              
+                
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        <div class="fade modal" id=SaveSettingsformModal role=dialog>
+    <div class="modal-dialog modal-sm">
+        <div class=modal-content>
+            <div class=modal-header>
+                <button class=close type=button data-dismiss=modal>×</button>
+                <h4 class=modal-title>Save Settings to USB?</h4>
+            </div>
+            <div class=modal-footer>
+                <button class="btn btn-default" type=button data-dismiss=modal onclick=SaveSettingsToUSB()>Continue</button>
+                <button class="btn btn-default" type=button data-dismiss=modal>Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fade modal" id=firmwareupdateformModal role=dialog>
+    <div class="modal-dialog modal-sm">
+        <div class=modal-content>
+            <div class=modal-header>
+                <button class=close type=button data-dismiss=modal>×</button>
+                <h4 class=modal-title>Start Firmware Update?</h4>
+            </div>
+            <div class=modal-footer>
+                <button class="btn btn-default" type=button data-dismiss=modal onclick=UpdateFirmware()>Continue</button>
+                <button class="btn btn-default" type=button data-dismiss=modal>Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="fade modal" id=ResetformModal role=dialog>
+    <div class="modal-dialog modal-sm">
+        <div class=modal-content>
+            <div class=modal-header>
+                <button class=close type=button data-dismiss=modal>×</button>
+                <h4 class=modal-title>Are you sure you want to reboot the Core Module?</h4>
+            </div>
+            <div class=modal-footer>
+                <button class="btn btn-default" type=button data-dismiss=modal onclick=SystemReset()>Continue</button>
+                <button class="btn btn-default" type=button data-dismiss=modal>Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Function that will allow us to know if Ajax uploads are supported
+function supportAjaxUploadWithProgress() {
+  return supportFileAPI() && supportAjaxUploadProgressEvents() && supportFormData();
+  // Is the File API supported?
+  function supportFileAPI() {
+    var fi = document.createElement('INPUT');
+    fi.type = 'file';
+    return 'files' in fi;
+  };
+  // Are progress events supported?
+  function supportAjaxUploadProgressEvents() {
+    var xhr = new XMLHttpRequest();
+    return !! (xhr && ('upload' in xhr) && ('onprogress' in xhr.upload));
+  };
+  // Is FormData supported?
+  function supportFormData() {
+    return !! window.FormData;
+  }
+}
+// Actually confirm support
+if (supportAjaxUploadWithProgress()) {
+  // Ajax uploads are supported!
+  // Change the support message and enable the upload button
+  //var notice = document.getElementById('support-notice');
+  var uploadBtn = document.getElementById('upload-button-id');
+  //notice.innerHTML = "Your browser supports HTML uploads. Go try me! :-)";
+  uploadBtn.removeAttribute('disabled');
+  // Init the Ajax form submission
+  initFullFormAjaxUpload();
+  // Init the single-field file upload
+  initFileOnlyAjaxUpload();
+}
+else
+{
+    var notice = document.getElementById('support-notice');
+    notice.innerHTML = "Your browser does not support HTML uploads. Please use a new browser :-(";
+
+}
+
+function initFullFormAjaxUpload() {
+  var form = document.getElementById('form-id');
+  form.onsubmit = function() {
+    // FormData receives the whole form
+    var formData = new FormData(form);
+    // We send the data where the form wanted
+    var action = form.getAttribute('action');
+    // Code common to both variants
+    sendXHRequest(formData, action);
+    // Avoid normal form submission
+    return false;
+  }
+}
+
+function initFileOnlyAjaxUpload() {
+  var uploadBtn = document.getElementById('upload-button-id');
+  uploadBtn.onclick = function (evt) {
+    var formData = new FormData();
+    // Since this is the file only, we send it to a specific location
+    var action = '/fwupdate';
+    // FormData only has the file
+    var fileInput = document.getElementById('file-id');
+    var file = fileInput.files[0];
+    formData.append('our-file', file);
+    // Code common to both variants
+    sendXHRequest(formData, action);
+  }
+}
+
+// Once the FormData instance is ready and we know
+// where to send the data, the code is the same
+// for both variants of this technique
+function sendXHRequest(formData, uri) {
+  // Get an XMLHttpRequest instance
+   $.get("USB_Status", function(data) {
+
+      if(data === ";No USB Found") 
+      {
+        var div = document.getElementById('upload-status');
+        div.innerHTML = "No USB Found";
+        var progress = document.getElementById('progress');
+        progress.innerHTML ="Upload Aborted - Insert USB";
+        var result = document.getElementById('result');
+        result.innerHTML = "";
+        
+        return;
+
+      }
+
+      var xhr = new XMLHttpRequest();
+      // Set up events
+      xhr.upload.addEventListener('loadstart', onloadstartHandler, false);
+      xhr.upload.addEventListener('progress', onprogressHandler, false);
+      xhr.upload.addEventListener('load', onloadHandler, false);
+      xhr.addEventListener('readystatechange', onreadystatechangeHandler, false);
+      // Set up request
+      xhr.open('POST', uri, true);
+      // Fire!
+      xhr.send(formData);
+
+});
+
+}
+// Handle the start of the transmission
+function onloadstartHandler(evt) {
+  var div = document.getElementById('upload-status');
+  if(evt.target.responseText === "No USB Found")
+    div.innerHTML = evt.target.responseText;
+  else
+  div.innerHTML = 'Upload started.';
+}
+// Handle the end of the transmission
+function onloadHandler(evt) {
+  var div = document.getElementById('upload-status');
+  div.innerHTML += '<' + 'br>File uploaded. Waiting for response.';
+}
+// Handle the progress
+function onprogressHandler(evt) {
+  var div = document.getElementById('progress');
+  var percent = evt.loaded/evt.total*100;
+  if(evt.target.responseText === "No USB Found")
+    div.innerHTML = evt.target.responseText;
+  else
+    div.innerHTML = 'Progress: ' + percent.toFixed(1) + '%';
+}
+// Handle the response from the server
+function onreadystatechangeHandler(evt) {
+  var status, text, readyState;
+  try {
+    readyState = evt.target.readyState;
+    text = evt.target.responseText;
+    status = evt.target.status;
+  }
+  catch(e) {
+    return;
+  }
+  //if (readyState == 4 && status == '200' && evt.target.responseText) {
+  if (readyState == 4 && status == 200) {
+
+    var status = document.getElementById('upload-status');
+    status.innerHTML += '<' + 'br>Success!';
+    var result = document.getElementById('result');
+    result.innerHTML = evt.target.responseText;
+  }
+}
+</script>
+  
+        
+    </body>
+
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Core Module</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- App favicon -->
+        <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
+        <!-- css -->
+        <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="icons.min.css" rel="stylesheet" type="text/css"/> -->
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <script src=jquery.min.js></script>
+        <script src=bootstrap.bundle.min.js></script>
+        <script src=branchdata.js></script>
+
+     </head>   
+     <body onload=SPConfig()>
+       <script> var myVar = setInterval(GetTimerData, 10000); </script>
+               <!-- Begin page -->
+        <div class="wrapper">
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left-side-menu">
+                <div class="slimscroll-menu">
+                    <!-- LOGO -->
+                    <a href="main.html" class="logo text-center">
+                        <span class="logo-lg">
+                         <img class="align-top" src="Critical-Power-Services-Logo.jpg" alt="" height="75">
+                        </span>
+                        <span class="logo-sm">
+                         <img class="align-top" src="Critical-Power-Services-Logo.jpg" alt="" height="75">
+                        </span>
+                    </a>
+                    <!--- Sidemenu -->
+                    <ul class="metismenu side-nav pt-3">
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="system.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> System </span></a></li>
+                        
+                         <li class="nav-item dropdown text-uppercase font-weight-bold" role="button" data-toggle="dropdown"><a href="#" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Configuration </span></a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+                        
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="branch_circuit_view.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Branch View </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="panel_view.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Panel View </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="waveform.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Waveform View </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="javascript: void(0);" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Guide </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="javascript: void(0);" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Help </span></a></li>
+                    </ul>
+                    <!-- End Sidebar -->
+                    <div class="clearfix"></div>
+                </div>
+                <!-- Sidebar -left -->
+            </div>
+            <!-- Left Sidebar End -->
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <div class="content">
+                    
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <h3 class="page-title"> Branch Circuit View </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+                        <div class="row">
+                            <div class="col-xl-12">
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card widget-flat">
+                                            <div class="card-body">
+                                                <h5 class="text-muted font-weight-normal mt-0 font-weight-bold" title="Growth">BRANCH CIRCUIT SUMMARY</h5>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Panel Name:</span>
+                                                    <span class="text-nowrap">Panel A01</span>
+                                                </p>
+                                                 <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Monitor:</span>
+                                                    <span id="MAC" class="text-nowrap">70B3D57F50A2</span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Time:</span>
+                                                    <span class="text-nowrap" id="Time">XX:XX:XX</span>
+                                                </p>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col--> 
+                                    <div class="col-sm-2">
+                                        <div class="card widget-flat">
+                                            <div class="card-body">
+                                                <h5 class="text-muted font-weight-normal mt-0 font-weight-bold" title="Growth">VOLTAGE LN</h5>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">VL1:</span>
+                                                    <span id="voltsln1" class="text-nowrap">123.4</span>
+                                                </p>
+                                                 <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">VL2:</span>
+                                                    <span id="voltsln2" class="text-nowrap">134.5</span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">VL3:</span>
+                                                    <span id="voltsln3" class="text-nowrap">145.6</span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Vav:</span>
+                                                    <span id="voltslnavg" class="text-nowrap">156.7</span>
+                                                </p>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col--> 
+                                    <div class="col-sm-2">
+                                        <div class="card widget-flat">
+                                            <div class="card-body">
+                                                <h5 class="text-muted font-weight-normal mt-0 font-weight-bold" title="Growth">VOLTAGE LL</h5>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">V12:</span>
+                                                    <span id="volts12" class="text-nowrap">123.4</span>
+                                                </p>
+                                                 <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">V23:</span>
+                                                    <span id="volts23" class="text-nowrap">134.5</span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">V31:</span>
+                                                    <span id="volts31" class="text-nowrap">145.6</span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">VLL:</span>
+                                                    <span id="voltsllavg" class="text-nowrap">156.7</span>
+                                                </p>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col--> 
+                                    <div class="col-md-4">
+                                        <div class="card widget-flat">
+                                            <div class="card-body">
+                                                <h5 class="text-muted font-weight-normal mt-0 font-weight-bold" title="Growth">SYSTEM SUMMARY</h5>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Frequency:</span>
+                                                    <span class="text-nowrap">60.1</span>
+                                                </p>
+                                                 <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">KW Total:</span>
+                                                    <span id="MAC" class="text-nowrap">34.5</span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Amps Total:</span>
+                                                    <span class="text-nowrap" id=Time>170.3</span>
+                                                </p>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col--> 
+                                </div> <!-- end row -->
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+<!-----Start table1 for Panel 1 SP 1/2 ----->
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                	<button type="button" align="center" class="btn btn-secondary btn-lg"><h3 style=text-align:center data-toggle=modal data-target=#SaveDetailSettings id=P1Name></h3></button>
+                                    <div class=container>
+                                    
+                                   <table class="table table-centered mb-0 table-striped table-bordered" cellspacing="0" cellpadding="0" id=P1Values>
+                                          
+                                    </table>
+                             </div> </div>
+<!-----Start table2 for Panel 2 SP 3/4 ----->
+                             <div class="card">
+                                    <button type="button" align="center" class="btn btn-secondary btn-lg"><h3 style=text-align:center data-toggle=modal data-target=#SaveDetailSettings id=P2Name></h3></button>
+                                    <div class=container>
+
+                                   <table class="table table-centered mb-0 table-striped table-bordered" cellspacing="0" cellpadding="0" id=P2Values>
+                                     
+                                    </table>
+                             </div> </div>             
+                        </div> <!-- end col-->
+                 </div><!-- end row -->
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+			<!-- ============================================================== -->
+            <!-- Modal Forms -->
+            <!-- ============================================================== -->
+
+<div class="fade modal" id=SaveDetailSettings role=dialog>
+        <div class="modal-dialog modal-sm">
+            <div class=modal-content>
+                <div class=modal-header>
+                    
+                    <h4 class=modal-title>Save Name and Ratings?</h4>
+                    <button class=close type=button data-dismiss=modal>×</button>
+                </div>
+                <div class=modal-footer>
+                    <button class="btn btn-default" type=button data-dismiss=modal>Cancel</button>
+                    <button class="btn btn-default" type=button data-dismiss=modal onclick=SaveDetailSettings()>Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="modal fade" id="UpdateFriendlyNameModal" tabindex="-1" role="dialog" aria-labelledby="FriendlyNameModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="FriendlyNameModalLabel">Update Friendly Name</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+           <div class="form-group">
+            <label for="message-text" class="col-form-label">Name:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+            <script type="text/javascript">document.getElementById("message-text").innerHTML = "Friendly Name";</script>
+            
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick=SetFriendlyName()>Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+            
+                        <!-- end of modal forms -->
+        	</div>
+        <!-- END wrapper -->
+        <!-- Right Sidebar -->
+        
+</body>
+</html>

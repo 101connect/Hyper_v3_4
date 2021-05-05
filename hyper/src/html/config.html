@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Core Module</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+       <!-- App favicon -->
+        <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
+        <!-- css -->
+       
+        <!-- css -->
+        <link href="Bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!-- <link href="icons.min.css" rel="stylesheet" type="text/css"/> -->
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <script src=jquery.min.js></script>
+        <script src=bootstrap.bundle.min.js></script>
+        <script src=data.js></script>
+        <script src=meterconfig.js></script>
+        <!-- css end -->
+    </head>
+    <body onload=GetConfig()>
+        <script> var myVar = setInterval(GetTime, 1000); </script>
+       	<script> $(function () {
+  				$('[data-toggle="tooltip"]').tooltip()
+				})
+		</script>
+        <!-- Begin page -->
+        <div class="wrapper">
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left-side-menu">
+                <div class="slimscroll-menu">
+                    <!-- LOGO -->
+                    <a href="main.html" class="logo text-center">
+                        <span class="logo-lg">
+                             <img class="align-top" src="Critical-Power-Services-Logo.jpg" alt="" height="75">
+                        </span>
+                        <span class="logo-sm">
+                            <img class="align-top" src="Critical-Power-Services-Logo.jpg" alt="" height="75">
+                        </span>
+                    </a>
+                    <!--- Sidemenu -->
+                    <ul class="metismenu side-nav pt-3">
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="system.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> System </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="config.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Configuration </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="branch_circuit_view.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Branch View </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="panel_view.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Panel View </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="waveform.html" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Waveform View </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="javascript: void(0);" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Guide </span></a></li>
+                        <li class="side-nav-item text-uppercase font-weight-bold"><a href="javascript: void(0);" class="side-nav-link text-white"><i class="dripicons-view-apps"></i><span> Help </span></a></li>
+                    </ul>
+                    <!-- End Sidebar -->
+
+                    <div class="clearfix"></div>
+
+                </div>
+                <!-- Sidebar -left -->
+
+            </div>
+            <!-- Left Sidebar End -->
+
+             <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    
+                   <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <div class="page-title-box">
+                                    <h3 class="page-title"> Panel Settings </h3>
+                                </div>
+                            </div>
+                             <div class="col-6 config-button">
+                                <!-- <a data-toggle=modal data-target=#UpdateNetworkModal class="btn float-right text-uppercase font-weight-bold px-4 py-2 rounded-corner rounded text-white" role="button">Save Settings</a> -->
+                                    <a data-toggle=modal data-target=#UpdateNetworkModal class="btn float-right text-uppercase font-weight-bold px-4 py-2 rounded-corner rounded " role="button">Save Settings</a>
+                                    <p>
+                                    <a id=UpdateStatusBack></a>
+                            </div>
+                        </div>
+                        <!-- define the modal save button -->
+
+                        <div class="fade modal" id=UpdateNetworkModal role=dialog>
+                            <div class="modal-dialog modal-sm">
+                                <div class=modal-content>
+                                    <div class=modal-header>
+                                    <button class=close type=button data-dismiss=modal>×</button>
+                                    <h4 class=modal-title>Save Settings</h4>
+                                    </div>
+                                    <div class=modal-footer>
+                                    <button class="btn btn-default" type=button data-dismiss=modal onclick=networkchange()>Apply Changes</button>
+                                    <button class="btn btn-default" type=button data-dismiss=modal>Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end of modal save button -->
+
+                        <div class="row">
+                            <div class="col-xl-12">
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                         <a data-toggle=modal data-target=#UpdateNetworkModal class="btn float-right text-uppercase font-weight-bold px-4 py-2 rounded-corner rounded text-white" role="button">Save Settings</a>
+                                    <p>
+                                    <a id=UpdateStatusBack></a>
+                                        <div class="card widget-flat">
+                                            <div class="card-body">
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Device Name:</span>
+                                                    <span id="DeviceName" class="text-nowrap">AMCM</span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Device Location:</span>
+                                                    <span id="DeviceLocation" class="text-nowrap">Location</span>
+                                                </p>
+                                                 <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">LAN MAC:</span>
+                                                    <span id="MAC" class="text-nowrap">70B3D57F50A2</span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-bold">Time:</span>
+                                                    <span id="Time" class="text-nowrap">XX:XX:XX</span>
+                                                </p>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col-->
+
+                                   <div class="col-lg-6 custom-drop-menu">
+                                       <div class="card widget-flat">
+                                            <div class="card-body">
+                                                  <div class="input-group mb-3">
+                                                  <div class="input-group-prepend">
+                                                    <label class="input-group-text" id="inputGroupSelect01">Panel1 Type</label>
+                                                  </div>
+                                                  <select class="custom-select" id="Panel1TypeInput" onchange="Panel1Config()">
+                                                    <option value="Top Feed">Top Feed</option>
+                                                    <option value="Bottom Feed">Bottom Feed</option>
+                                                    <option value="Inline Sequential">Inline Sequential</option>
+                                                    <option value="Inline Odd/Even">Inline Odd/Even</option>
+                                                    <option value="Sequential">Sequential</option>
+                                                  </select>
+                                                </div>
+                                                <div class="input-group mb-3">
+                                                  <div class="input-group-prepend">
+                                                    <label class="input-group-text" id="inputGroupSelect02">Panel2 Type</label>
+                                                  </div>
+                                                  <select class="custom-select" id="Panel2TypeInput" onchange="Panel2Config()">
+                                                    <option value="Top Feed">Top Feed</option>
+                                                    <option value="Bottom Feed">Bottom Feed</option>
+                                                    <option value="Inline Sequential">Inline Sequential</option>
+                                                    <option value="Inline Odd/Even">Inline Odd/Even</option>
+                                                    <option value="Sequential">Sequential</option>
+                                                  </select>
+                                                </div>
+
+                                            
+                                               
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->   
+                                    </div> <!-- end col-->
+                                    
+                                    
+                                    
+                                </div> <!-- end row -->
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+
+               <div class="clearfix"></div>
+                        
+         <!--- Start of the Smart Port entries --->               
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class=container>
+                        <div id=P1Settings>
+                            <h3 style=text-align:center id=P1Name>Panel 1 Settings</h3>
+                            <table class="table table-centered mb-0 table-striped table-bordered" id=P1Values></table>
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class=container>
+                        <div id=P2Settings>
+                            <h3 style=text-align:center id=P2Name>Panel 2 Settings</h3>
+                            <table class="table table-centered mb-0 table-striped table-bordered" id=P2Values></table>
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+    <div class="fade modal" id=UpdateGeneralSettingsformModal role=dialog>
+        <div class="modal-dialog modal-sm">
+            <div class=modal-content>
+                <div class=modal-header>
+                    <button class=close type=button data-dismiss=modal>×</button>
+                    <h4 class=modal-title>Update General Settings</h4>
+                </div>
+                <div class=modal-footer>
+                    <button class="btn btn-default" type=button data-dismiss=modal onclick=SetGeneralSettings()>Apply Changes</button>
+                    <button class="btn btn-default" type=button data-dismiss=modal>Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+                            </div>
+
+
+                           
+                        
+                        
+                </div><!-- container --> 
+                <!-- content -->
+                
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+            <div class="modal fade" id="UpdateFriendlyNameModal" tabindex="-1" role="dialog" aria-labelledby="FriendlyNameModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="FriendlyNameModalLabel">Update Friendly Name</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+           <div class="form-group">
+            <label for="message-text" class="col-form-label">Name:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+            <script type="text/javascript">document.getElementById("message-text").innerHTML = "Friendly Name";</script>
+            
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick=SetFriendlyName(id)>Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        </div>
+        <!-- END wrapper -->
+
+        
+
+
+                
+
+        
+        
+    </body>
+
+</html>
