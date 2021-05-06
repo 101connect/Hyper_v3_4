@@ -1,0 +1,96 @@
+
+dt {
+    width: 190px;
+    text-align: right;
+    color: darkgray;
+    margin: 20px 0 0 0;
+}
+
+dd {
+    margin: -1.5em 0 .5em 200px;
+}
+
+input[type=text] {
+    display: block;
+    width: auto;
+    padding: 5px;
+    margin: 0;
+}
+
+/* specifics */
+.select {
+    position: relative;
+    min-width: 100px;
+    display: inline-block;
+    padding: 5px 20px 5px 5px;
+    border: outset 1px gray;
+    background: rgba(246,246,246,.75);
+}
+.select:after {
+    width: 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 16px;
+    padding: 5px;
+
+    content: '▼';
+    outline: 1px gray;
+}
+.select.box {
+    position: relative;
+    min-width: 100px;
+    display: inline-block;
+    padding: 5px 10px 5px 5px;
+}
+.select.box .options {
+    position: relative;
+    display: inline-block;
+    border: inset 1px;
+    width: 100%;
+    padding: 2px;
+    background: white;
+    color: black;
+}
+.select.box:after{
+    content: '';
+    display: none;
+}
+
+.select .options {
+    position: absolute;
+    display: none;
+    border: outset 1px;
+    padding: 2px;
+    min-width: 100%;
+    background: white;
+    color: black;
+}
+.select .options li {
+    list-style-type: none;
+    display: block;
+    background: white;
+    color: black;
+    padding: 0 1em 0 .5em;
+}
+.select .options:visible {
+    z-index: 10;
+    border: solid 4px red;
+}
+.select .options li {
+    white-space: nowrap;
+}
+.select .options li.selected {
+    background: steelblue;
+    color: white;
+}
+.select .options li.selected:before {
+    content: '✓';
+}
+
+.select .options li:hover {
+    list-style-type: none;
+    display: block;
+    background: black;
+    color: white;
+}

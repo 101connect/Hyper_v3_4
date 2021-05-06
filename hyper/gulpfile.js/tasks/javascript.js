@@ -14,7 +14,7 @@ const compileJs = function () {
     //copying demo pages related assets
     var appPagesAssets = {
         js: [
-            baseAssets + "js/pages/demo.dashboard.js"
+            baseAssets + "js/pages/MeterInfo.js"
            
         ]
     };
@@ -51,6 +51,7 @@ const compileJs = function () {
         .src([
             baseAssets + "js/vendor/jquery.js",
             baseAssets + "js/vendor/bootstrap.bundle.js",
+            baseAssets + "js/vendor/metisMenu.js"
             
         ])
         .pipe(sourcemaps.init())

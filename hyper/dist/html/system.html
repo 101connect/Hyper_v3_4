@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Starter page</title>
+        <title>Core Module Settings</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- App favicon -->
@@ -16,6 +16,7 @@
         <!-- App css -->
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+       
        
 
     </head>
@@ -338,47 +339,129 @@
                             <div class="col-12">
                                 <div class="page-title-box">
                                     
-                                    <h4 class="page-title">Dashboard</h4>
+                                    <h4 class="page-title">System Settings</h4>
                                 </div>
                             </div>
                         </div>
                         <!-- end page title -->
 
                         <div class="row">
-                            <div class="col-xl-5 col-lg-6">
+                            <div class="col-lg-12">
 
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
                                         <div class="card widget-flat">
                                             <div class="card-body">
-                                                <div class="float-right">
-                                                    <i class="mdi mdi-account-multiple widget-icon"></i>
-                                                </div>
-                                                <h5 class="text-muted font-weight-normal mt-0" title="Number of Customers">Customers</h5>
-                                                <h3 class="mt-3 mb-3">36,254</h3>
+                                                
+                                                <h3 class="text-muted font-weight-bold mt-0" title="Network Settings">Network</h5>
                                                 <p class="mb-0 text-muted">
-                                                    <span class="text-success mr-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>
-                                                    <span class="text-nowrap">Since last month</span>  
+                                                    <span class="mr-2 font-weight-normal">DHCP:</span>
+                                                    <span id="ipmode" class="text-nowrap"><label>
+                                                        <label>
+                                                            <input id=dhcpenable name=dhcpradio onchange=dhcpchange() type=radio>On
+                                                        </label>
+                                                        <label>
+                                                            <input id=manualconfig name=dhcpradio onchange=dhcpchange() type=radio>Off
+                                                        </label>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">IP Address:</span><br>
+                                                    <span  class="text-nowrap"><input id=IPV4ADDRESS class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">NetMask:</span><br>
+                                                    <span  class="text-nowrap"><input id=IPV4MASK class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">Gateway:</span><br>
+                                                    <span  class="text-nowrap"><input id=IPV4GATEWAY class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">DNS:</span><br>
+                                                    <span  class="text-nowrap"><input id=IPV4DNS1 class=form-control style=width:125px;height:25px;font-size:small></span>
                                                 </p>
                                             </div> <!-- end card-body-->
                                         </div> <!-- end card-->
                                     </div> <!-- end col-->
 
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
                                         <div class="card widget-flat">
                                             <div class="card-body">
-                                                <div class="float-right">
-                                                    <i class="mdi mdi-cart-plus widget-icon"></i>
-                                                </div>
-                                                <h5 class="text-muted font-weight-normal mt-0" title="Number of Orders">Orders</h5>
-                                                <h3 class="mt-3 mb-3">5,543</h3>
+                                                
+                                                <h3 class="text-muted font-weight-bold mt-0" title="Protocol Settings">Protocol</h5>
                                                 <p class="mb-0 text-muted">
-                                                    <span class="text-danger mr-2"><i class="mdi mdi-arrow-down-bold"></i> 1.08%</span>
-                                                    <span class="text-nowrap">Since last month</span>
+                                                    <span class="mr-2 font-weight-normal">Modbus Slave ID:</span><br>
+                                                    <span  class="text-nowrap"><input id=SERIALADDRESS class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">BacNET ID:</span><br>
+                                                    <span  class="text-nowrap"><input id=BACnetID class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">BACnet Port:</span><br>
+                                                    <span  class="text-nowrap"><input id=BACnetPort class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">BACnet Virtual Network:</span><br>
+                                                    <span  class="text-nowrap"><input id=BACnetVirtNet class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">NTP Time Server:</span><br>
+                                                    <span  class="text-nowrap"><input id=IPV4NTP class=form-control style=width:125px;height:25px;font-size:small></span>
                                                 </p>
                                             </div> <!-- end card-body-->
                                         </div> <!-- end card-->
                                     </div> <!-- end col-->
+
+                                    <div class="col-lg-4">
+                                        <div class="card widget-flat">
+                                            <div class="card-body">
+                                                
+                                                <h3 class="text-muted font-weight-bold mt-0" title="Number of Orders">General</h5>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">Demand Interval (0-3600 seconds):</span><br>
+                                                    <!-- <span class="mr-2 font-weight-normal">(0-3600 seconds):</span><br> -->
+                                                    <span class="text-nowrap"><input id=DemandInterval class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+
+                                                
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">Sub Intervals (1-6):</span><br>
+                                                    <span class="text-nowrap"><select  style='font-size: 12px; font-family: "Nunito", Sans-Serif;' id=DemandSubInt>
+                                                        <optgroup class="mr-2 font-weight-normal">
+                                                        <option  id=DemandSubInt1>1</option>
+                                                        <option id=DemandSubInt2>2</option>
+                                                        <option id=DemandSubInt3>3</option>
+                                                        <option id=DemandSubInt4>4</option>
+                                                        <option id=DemandSubInt5>5</option>
+                                                        <option id=DemandSubInt6>6</option>
+                                                        </optgroup>
+                                                    </select></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">Point Map:</span><br>
+                                                    <span class="text-nowrap"><select style='font-size: 14px; font-family: "Nunito", Sans-Serif;' id=PointMap>
+                                                    <option id=CMPointMap>Core Module Point Map</option>
+                                                    <option id=BCPMPointMap>Schneider Point Map</option>
+                                                </select></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">Serial Baud Rate:</span><br>
+                                                    <span class="text-nowrap">
+                                                        <select  style='font-size: 12px; font-family: "Nunito", Sans-Serif;' id=BaudRate>
+                                                            <option id=BAUD9600>9600</option>
+                                                            <option id=BAUD19200>19200</option>
+                                                            <option id=BAUD38400>38400</option>
+                                                            <option id=id=BAUD57600>57600</option>
+                                                            <option id=BAUD115200>115200</option>
+                                                        </select>
+                                                    </span>
+                                   
+                                                </p>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col-->
+
                                 </div> <!-- end row -->
 
                                
