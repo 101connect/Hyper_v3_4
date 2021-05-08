@@ -16,6 +16,7 @@
         <!-- App css -->
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css" id="light-style" />
        
        
 
@@ -338,8 +339,13 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    
-                                    <h4 class="page-title">System Settings</h4>
+                                    <!-- <div class="page-title-right">
+                                        
+                                             <button class="btn btn-secondary mt-1 mb-1 btn-rounded" type=button id="amcustom-btn" data-toggle="modal" data-target=#ResetformModal>Update Settings</button>
+                                        
+                                    </div> -->
+                                   <button class="btn btn-secondary mt-2 mb-2 btn-rounded" type=button id="amcustom-btn" data-toggle="modal" data-target=#ResetformModal>Update Settings</button>
+                                    <!-- <h4 class="page-title">System Settings</h4> -->
                                 </div>
                             </div>
                         </div>
@@ -349,7 +355,7 @@
                             <div class="col-lg-12">
 
                                 <div class="row">
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-3">
                                         <div class="card widget-flat">
                                             <div class="card-body">
                                                 
@@ -358,10 +364,10 @@
                                                     <span class="mr-2 font-weight-normal">DHCP:</span>
                                                     <span id="ipmode" class="text-nowrap"><label>
                                                         <label>
-                                                            <input id=dhcpenable name=dhcpradio onchange=dhcpchange() type=radio>On
+                                                            <input id=dhcpenable name=dhcpradio onchange=dhcpchange() type=radio>Enable
                                                         </label>
                                                         <label>
-                                                            <input id=manualconfig name=dhcpradio onchange=dhcpchange() type=radio>Off
+                                                            <input id=manualconfig name=dhcpradio onchange=dhcpchange() type=radio>Disable
                                                         </label>
                                                 </p>
                                                 <p class="mb-0 text-muted">
@@ -380,21 +386,50 @@
                                                     <span class="mr-2 font-weight-normal">DNS:</span><br>
                                                     <span  class="text-nowrap"><input id=IPV4DNS1 class=form-control style=width:125px;height:25px;font-size:small></span>
                                                 </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">NTP Time Server:</span><br>
+                                                    <span  class="text-nowrap"><input id=IPV4NTP class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <br>
                                             </div> <!-- end card-body-->
                                         </div> <!-- end card-->
                                     </div> <!-- end col-->
 
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-3">
                                         <div class="card widget-flat">
                                             <div class="card-body">
                                                 
                                                 <h3 class="text-muted font-weight-bold mt-0" title="Protocol Settings">Protocol</h5>
                                                 <p class="mb-0 text-muted">
-                                                    <span class="mr-2 font-weight-normal">Modbus Slave ID:</span><br>
+                                                    <span class="mr-2 font-weight-normal">Modbus Slave ID: (1-254)</span><br>
                                                     <span  class="text-nowrap"><input id=SERIALADDRESS class=form-control style=width:125px;height:25px;font-size:small></span>
                                                 </p>
                                                 <p class="mb-0 text-muted">
-                                                    <span class="mr-2 font-weight-normal">BacNET ID:</span><br>
+                                                    <span class="mr-2 font-weight-normal">Modbus RTU Baud Rate:</span><br>
+                                                    <span class="text-nowrap">
+                                                        <select  style='font-size: 12px; font-family: "Nunito", Sans-Serif;' id=BaudRate>
+                                                            <option id=BAUD9600>9600</option>
+                                                            <option id=BAUD19200>19200</option>
+                                                            <option id=BAUD38400>38400</option>
+                                                            <option id=id=BAUD57600>57600</option>
+                                                            <option id=BAUD115200>115200</option>
+                                                        </select>
+                                                    </span>
+                                   
+                                                </p>
+                                                <br>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">BACnet: </span>
+                                                    <span id="BACnetmode" class="text-nowrap"><label>
+                                                        <label>
+                                                            <input id=bacnetenable name=bacnetradio onchange=enablebacnet() type=radio>Enable
+                                                        </label>
+                                                        <label>
+                                                            <input id=bacnetdisable name=bacnetradio onchange=disablebacnet() type=radio>Disable
+                                                        </label>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">BACnet ID:</span><br>
                                                     <span  class="text-nowrap"><input id=BACnetID class=form-control style=width:125px;height:25px;font-size:small></span>
                                                 </p>
                                                 <p class="mb-0 text-muted">
@@ -405,15 +440,12 @@
                                                     <span class="mr-2 font-weight-normal">BACnet Virtual Network:</span><br>
                                                     <span  class="text-nowrap"><input id=BACnetVirtNet class=form-control style=width:125px;height:25px;font-size:small></span>
                                                 </p>
-                                                <p class="mb-0 text-muted">
-                                                    <span class="mr-2 font-weight-normal">NTP Time Server:</span><br>
-                                                    <span  class="text-nowrap"><input id=IPV4NTP class=form-control style=width:125px;height:25px;font-size:small></span>
-                                                </p>
+                                                
                                             </div> <!-- end card-body-->
                                         </div> <!-- end card-->
                                     </div> <!-- end col-->
 
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-3">
                                         <div class="card widget-flat">
                                             <div class="card-body">
                                                 
@@ -423,7 +455,6 @@
                                                     <!-- <span class="mr-2 font-weight-normal">(0-3600 seconds):</span><br> -->
                                                     <span class="text-nowrap"><input id=DemandInterval class=form-control style=width:125px;height:25px;font-size:small></span>
                                                 </p>
-
                                                 
                                                 <p class="mb-0 text-muted">
                                                     <span class="mr-2 font-weight-normal">Sub Intervals (1-6):</span><br>
@@ -438,35 +469,219 @@
                                                         </optgroup>
                                                     </select></span>
                                                 </p>
+                                                <Br>
                                                 <p class="mb-0 text-muted">
                                                     <span class="mr-2 font-weight-normal">Point Map:</span><br>
-                                                    <span class="text-nowrap"><select style='font-size: 14px; font-family: "Nunito", Sans-Serif;' id=PointMap>
-                                                    <option id=CMPointMap>Core Module Point Map</option>
-                                                    <option id=BCPMPointMap>Schneider Point Map</option>
-                                                </select></span>
-                                                </p>
-                                                <p class="mb-0 text-muted">
-                                                    <span class="mr-2 font-weight-normal">Serial Baud Rate:</span><br>
                                                     <span class="text-nowrap">
-                                                        <select  style='font-size: 12px; font-family: "Nunito", Sans-Serif;' id=BaudRate>
-                                                            <option id=BAUD9600>9600</option>
-                                                            <option id=BAUD19200>19200</option>
-                                                            <option id=BAUD38400>38400</option>
-                                                            <option id=id=BAUD57600>57600</option>
-                                                            <option id=BAUD115200>115200</option>
+                                                        <select style='font-size: 14px; font-family: "Nunito", Sans-Serif;' id=PointMap>
+                                                            <option id=CMPointMap>Core Module Point Map</option>
+                                                            <option id=BCPMPointMap>Schneider Point Map</option>
                                                         </select>
                                                     </span>
-                                   
                                                 </p>
+                                                <Br>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">PT Ratio (600:240 = 2.5):</span><br>
+                                                    
+                                                    <span  class="text-nowrap"><input id=ptratio class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="mr-2 font-weight-normal">System Voltage (Line to Line):</span><br>
+                                                    
+                                                    <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                </p>
+                                                
+                                                
                                             </div> <!-- end card-body-->
                                         </div> <!-- end card-->
                                     </div> <!-- end col-->
 
-                                </div> <!-- end row -->
+                                    <div class="col-lg-3">
+                                        <div class="card widget-flat">
+                                            <div class="card-body">
+                                                
+                                                <h3 class="text-muted font-weight-bold mt-0" title="Protocol Settings">Voltage Alarm Settings</h5>
+                                                    
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">High Threshold L-L (V):</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">High Threshold Delay (s):</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                    
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">Low Threshold L-L (V):</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">Low Threshold Delay (s):</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                    <br>
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">Non-Latching Hysteresis (%):</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+
+                                                
+                                                
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col-->
+
+                                </div> <!-- end of first row -->
+    
+                     
+                       
+
+                       
+                        
+                                <!-- start second row -->
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div class="card widget-flat">
+                                            <div class="card-body">
+                                                
+                                                <h3 class="text-muted font-weight-bold mt-0" title="Network Settings">Curent Alarms Latching</h5>
+                                                 <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">High Threshold Latching (V):</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">High Threshold Delay (s):</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                    
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">Low Threshold Latching (V):</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">Low Threshold Delay (s):</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                    
+                                                    
+                                                
+                                                <br>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col-->
+
+                                    <div class="col-lg-3">
+                                        <div class="card widget-flat">
+                                            <div class="card-body">
+                                                
+                                                 <h3 class="text-muted font-weight-bold mt-0" title="Network Settings">Curent Alarms Non-Latching</h5>
+                                                 <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">High Threshold Non-Latching (V):</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">Low Threshold Non-Latching (V):</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                    
+                                                    
+                                                    <br>
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">Non-Latching Hysteresis (%):</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                <br>
+                                                
+                                                
+                                                
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col-->
+
+ 
+                                    <div class="col-lg-3">
+                                        <div class="card widget-flat">
+                                            <div class="card-body">
+                                                
+                                                <h3 class="text-muted font-weight-bold mt-0" title="Number of Orders">Miscellaneous</h5>
+                                                <p class="mb-0 text-muted">
+                                                    <span  class="text-nowrap">
+                                                        <button class="btn btn-secondary mt-1 mb-1 btn-rounded" type=button data-toggle="modal" data-target=#SaveSettingsformModal>Save Settings</button>
+                                                    </span>
+                                                </p>
+                                                
+                                                <p class="mb-0 text-muted">
+                                                   <!--  <span class="mr-2 font-weight-bold">Update Firmware:</span><br> -->
+                                                    <span  class="text-nowrap">
+                                                        <button class="btn btn-secondary mt-1 mb-1 btn-rounded" type=button data-toggle="modal" data-target=#firmwareupdateformModal>Update Firmware</button>
+                                                    </span>
+                                                </p>
+                                                <p>
+                                                    <span class="mr-2 font-weight-normal">Upload File to USB:</span><br>
+                                                    <span  class="text-nowrap">
+                                                        <form action="/" method="post" enctype="multipart/form-data" id="form-id">
+                                                            <p>
+                                                                <input id="file-id" type="file" name="our-file"/><br>
+                                                                <input type="button" value="Upload to USB" id="upload-button-id" disabled="disabled" />
+                                                            </p>
+                                                                <p id="upload-status"></p>
+                                                                <p id="progress"></p>
+                                                                <p id="result"></p>
+                                                        </form>
+                                                    </span>
+                                                </p>
+                                                <p class="mb-0 text-muted">
+                                                   <!--  <span class="mr-2 font-weight-bold">Restart Core Module:</span><br> -->
+                                                    <span  class="text-nowrap">
+                                                        <button class="btn btn-secondary mt-1 mb-1 btn-rounded" type=button id="amcustom-btn" data-toggle="modal" data-target=#ResetformModal>Restart Core Module</button>
+                                                    </span>
+                                                </p>
+                                                
+                                                
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col-->
+
+                                    <div class="col-lg-3">
+                                        <div class="card widget-flat">
+                                            <div class="card-body">
+                                                
+                                                <h3 class="text-muted font-weight-bold mt-0" title="Protocol Settings">More Settings</h5>
+                                                    
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">Input</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                    <p class="mb-0 text-muted">
+                                                       <span class="mr-2 font-weight-normal">Input</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                    
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">Input</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">Input</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+                                                    <br>
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">Input</span><br>
+                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+
+                                                
+                                                
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col-->
+
+                                </div> <!-- end of second row -->
 
                                
                         </div>
-                        <!-- end row -->
+                        <!-- end of all rows -->
 
                     </div>
                     <!-- container -->
@@ -479,7 +694,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
-                                <script>document.write(new Date().getFullYear())</script> © Hyper - Coderthemes.com
+                                <script>document.write(new Date().getFullYear())</script> © AnordMardix.com
                             </div>
                             <div class="col-md-6">
                                 <div class="text-md-right footer-links d-none d-md-block">

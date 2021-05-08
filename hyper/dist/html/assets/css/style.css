@@ -1,4 +1,16 @@
 
+progress {
+  
+  min-width: 3em;
+  background-color: red;
+}
+
+#amcustom-btn {
+    background-color: #313a46;
+    border-color: #313a46;
+}
+
+ 
 dt {
     width: 190px;
     text-align: right;

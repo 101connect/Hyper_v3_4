@@ -4,17 +4,16 @@
 // Color system
 //
 
-$white:    #fff !default;
-$gray-100: #f1f3fa;
-$gray-200: #eef2f7;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #98a6ad;
-$gray-700: #919ca7;
-$gray-800: #343a40 !default;
-$gray-900: #474d56;
-$black:    #000 !default;
+// stylelint-disable
+$gray-100: #404954;
+$gray-200: #37404a;
+$gray-300: #464f5b;
+$gray-400: #8391a2;
+$gray-500: #aab8c5;
+$gray-600: #ced4da;
+$gray-700: #dee2e6;
+$gray-800: #e3eaef;
+$gray-900: #f1f1f1;
 
 $grays: ();
 $grays: map-merge((
@@ -29,7 +28,7 @@ $grays: map-merge((
   "900": $gray-900
 ), $grays);
 
-$blue:       #313a46;
+$blue:       #3688fc;
 $indigo:     #727cf5;
 $purple:     #6b5eae;
 $pink:       #ff679b;
@@ -39,7 +38,6 @@ $yellow:     #f9bc0d;
 $green:      #42d29d;
 $teal:       #02a8b5;
 $cyan:       #44badc;
-$amcolor:    #313a46; 
 
 
 $colors: ();
@@ -55,18 +53,17 @@ $colors: map-merge((
   "teal":       $teal,
   "cyan":       $cyan,
   "white":      $white,
-  "amcolor":     $amcolor,
   "gray":       $gray-600,
   "gray-dark":  $gray-800
 ), $colors);
 
 $primary:       $blue;
-$secondary:     $gray-700;
+$secondary:     $gray-300;
 $success:       $green;
 $info:          $cyan;
 $warning:       $yellow;
 $danger:        $red;
-$light:         $gray-200;
+$light:         $gray-300;
 $dark:          $gray-900;
 
 $theme-colors: ();
@@ -78,7 +75,6 @@ $theme-colors: map-merge((
   "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
-  "amcolor":     $amcolor,
   "dark":       $dark
 ), $theme-colors);
 
@@ -89,7 +85,7 @@ $yiq-contrasted-threshold:  200;
 
 // Customize the light and dark text colors for use in our YIQ color contrast function.
 
-$yiq-text-dark: $gray-900;
+$yiq-text-dark: $gray-200;
 
 
 // Options
@@ -131,9 +127,8 @@ $sizes: map-merge((
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   #fafbfe;
-$body-color:                darken($gray-700,5%);
-
+$body-bg:                   #343a40;
+$body-color:                $gray-500;
 
 // Links
 //
@@ -142,6 +137,7 @@ $body-color:                darken($gray-700,5%);
 $link-color:                $primary;
 $link-hover-color:          darken($link-color, 15%);
 $link-hover-decoration:     none;
+
 
 // Grid breakpoints
 //
@@ -188,6 +184,8 @@ $component-active-bg:         $primary;
 
 $caret-width:                 .25em;
 
+$border-color:                $gray-300;
+
 
 // Fonts
 //
@@ -199,10 +197,8 @@ $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberati
 $font-family-base:            $font-family-sans-serif;
 
 // stylelint-enable value-keyword-case
-$font-size-base:              0.9rem;
+$font-size-base:              0.875rem;
 $font-weight-bold:            700;
-
-$line-height-base:            1.5;
 
 $headings-margin-bottom:      $spacer;
 $headings-font-weight:        400;
@@ -221,11 +217,11 @@ $lead-font-size:              ($font-size-base * 1.25);
 
 $small-font-size:             0.75rem;
 
-$text-muted:                  $gray-600;
+$text-muted:                  $gray-400;
 
 $blockquote-font-size:        ($font-size-base * 1.25);
 
-$hr-border-color:             $gray-200;
+$hr-border-color:             lighten($gray-300,5%);
 
 $list-inline-padding:         6px;
 
@@ -240,16 +236,16 @@ $table-cell-padding-sm:       .5rem;
 $table-color:                 $body-color;
 $table-hover-color:           $table-color;
 
-$table-accent-bg:             $gray-100;
-$table-hover-bg:              $gray-100;
+$table-accent-bg:             lighten($gray-200,3%);
+$table-hover-bg:              lighten($gray-200,3%);
 
-$table-border-color:          $gray-200;
+$table-border-color:          $gray-300;
 
-$table-head-bg:               $gray-100;
+$table-head-bg:               $gray-300;
 $table-head-color:            $gray-700;
 
-$table-dark-bg:               $gray-900;
-$table-dark-border-color:     lighten($gray-900, 7.5%);
+$table-dark-bg:               $gray-300;
+$table-dark-border-color:     lighten($gray-300, 7.5%);
 $table-dark-color:            $gray-600;
 
 
@@ -260,9 +256,8 @@ $table-dark-color:            $gray-600;
 $input-btn-padding-y:         .45rem;
 $input-btn-padding-x:         .90rem;
 $input-btn-font-size:         $font-size-base;
-$input-btn-focus-width:       .1rem;
-  $input-btn-focus-color:       rgba($primary, .25);
-//$input-btn-focus-color:        #313a46;
+$input-btn-focus-width:       .15rem;
+$input-btn-focus-color:       rgba($primary, .25);
 $input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color;
 
 $input-btn-padding-y-sm:      .28rem;
@@ -294,7 +289,10 @@ $btn-focus-box-shadow:        $input-btn-focus-box-shadow;
 
 $btn-link-disabled-color:     $gray-500;
 
-$btn-box-shadow:              0 0 0 0;  // button box shadow
+$btn-box-shadow:              0 0 0;  // button box shadow
+
+$btn-focus-width:             0.15rem;
+
 
 // Allows for customizing button radius independently from global border radius
 
@@ -318,15 +316,23 @@ $input-padding-y-lg:                    $input-btn-padding-y-lg;
 $input-padding-x-lg:                    $input-btn-padding-x-lg;
 $input-line-height-lg:                  $input-btn-line-height-lg;
 
-$input-color:                           $body-color;
+$input-bg:                              $gray-100;
+
+$input-color:                           $gray-800;
 $input-border-width:                    1px;
-$input-border-color:                    $gray-300;
+$input-border-color:                    lighten($gray-100,3%);
 $input-border-radius:                   0.25rem;
 
+$input-focus-bg:                        lighten($input-bg,2.5%);
+$input-focus-color:                     $gray-800;
 $input-focus-box-shadow:                none;
-$input-focus-border-color:              darken($input-border-color,10%);
+$input-focus-border-color:              lighten($input-border-color,5%);
 
-$input-placeholder-color:               $gray-500;
+
+$input-disabled-bg:                     $input-focus-bg;
+
+$input-placeholder-color:               $gray-400;
+$input-plaintext-color:                 $body-color;
 
 $input-height-border:                   $input-border-width * 2;
 
@@ -341,12 +347,18 @@ $input-height-lg:                       calc(#{$input-height-inner-lg} + #{$inpu
 
 $input-group-addon-border-color:        $input-border-color;
 
+$input-group-addon-color:               $input-color;
+$input-group-addon-bg:                  $input-border-color;
+$input-group-addon-border-color:        $input-border-color;
+
 $custom-select-padding-y:           .45rem;
 $custom-select-padding-x:           .90rem;
 $custom-select-height:              $input-height;
 $custom-select-font-size:           $input-font-size;
 
-$custom-control-indicator-border-color:         $input-border-color;
+$custom-control-indicator-disabled-bg:      $gray-200;
+$custom-control-indicator-bg:           $gray-300;
+$custom-control-indicator-border-color:         lighten($input-border-color,5%);
 $custom-control-indicator-checked-color:        $primary;
 $custom-control-indicator-checked-border-color: $primary;
 $custom-control-indicator-checked-bg:           $primary;
@@ -356,11 +368,16 @@ $custom-checkbox-indicator-indeterminate-border-color:   $primary;
 $custom-checkbox-indicator-indeterminate-bg:             $primary;
 
 $custom-select-border-width:        $input-border-width;
+$custom-select-color:               $input-color;
+$custom-select-bg:                  $input-bg;
 $custom-select-border-color:        $input-border-color;
 $custom-select-border-radius:       $border-radius;
 $custom-select-focus-border-color:  $input-focus-border-color;
 $custom-select-focus-box-shadow:    none;
 $custom-control-indicator-focus-box-shadow:     0 0 0 1px $body-bg, $input-btn-focus-box-shadow;
+$custom-select-indicator-color:     $gray-800;
+$custom-select-indicator:           str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e"), "#", "%23");
+$custom-select-background:          $custom-select-indicator no-repeat right $custom-select-padding-x center / $custom-select-bg-size; // Used so we can have multiple background elements (e.g., arrow and feedback icon)
 
 $custom-range-track-width:          100%;
 $custom-range-track-height:         .5rem;
@@ -401,7 +418,6 @@ $custom-file-text: (
   en: "Browse"
 ) !default;
 
-
 // Form validation
 
 $form-feedback-margin-top:          $form-text-margin-top;
@@ -430,62 +446,83 @@ $form-validation-states: map-merge(
   $form-validation-states
 );
 
-// Navbar
-
-$navbar-light-color:                darken($gray-700,5%);
-$navbar-light-hover-color:          $gray-800;
-$navbar-light-active-color:         $primary;
-$navbar-light-disabled-color:       $gray-500;
 
 // Dropdowns
 //
 // Dropdown menu container and contents.
 
+
+$dropdown-bg:                       $gray-300;
 $dropdown-padding-y:                .25rem;
-$dropdown-border-color:             darken($light, 3%);
+$dropdown-border-color:             lighten($gray-300, 3%);
 $dropdown-font-size:                $font-size-base;
 
 $dropdown-link-color:               $body-color;
 $dropdown-color:                    $body-color;
 $dropdown-link-hover-color:         $headings-color;
+$dropdown-link-hover-bg:            lighten($gray-300, 3%);
 
-$dropdown-link-active-color:        $dark;
-$dropdown-link-active-bg:           lighten($light, 3%);
+$dropdown-link-active-color:        $white;
+$dropdown-link-active-bg:           lighten($gray-300, 3%);
 
 $dropdown-item-padding-y:           .375rem;
 
 $dropdown-header-color:             inherit;
+
+$dropdown-divider-bg:               lighten($gray-300, 3%);
 
 
 // Navs
 $nav-pills-link-active-color:       $component-active-color;
 $nav-pills-link-active-bg:          $component-active-bg;
 
+$nav-tabs-border-color:             lighten($gray-300, 3%);
+$nav-tabs-link-hover-border-color:  lighten($gray-300, 3%);
+
+$nav-tabs-link-active-color:        $gray-700;
+$nav-tabs-link-active-bg:           $gray-300;
+$nav-tabs-link-active-border-color: lighten($gray-300, 3%);
+
+$nav-divider-color:                 $gray-300;
+
+//Navbar
+$navbar-light-color:                $gray-500;
+$navbar-light-hover-color:          $gray-600;
+$navbar-light-active-color:         rgba($white, .9);
+$navbar-light-brand-color:          $navbar-light-active-color;
+$navbar-light-brand-hover-color:    $navbar-light-active-color;
 
 // Pagination
 
-$pagination-color:                  $dark;
-
+$pagination-color:                  $gray-400;
+$pagination-bg:                     lighten($gray-200, 3%);
+$pagination-border-color:           $gray-300;
 $pagination-focus-box-shadow:       $input-btn-focus-box-shadow;
 
-$pagination-hover-color:            $dark;
+$pagination-hover-color:            $gray-700;
+$pagination-hover-bg:               lighten($pagination-bg,3%);
+$pagination-hover-border-color:     $gray-300;
 $pagination-active-bg:              $component-active-bg;
 $pagination-active-border-color:    $pagination-active-bg;
 
+$pagination-disabled-color:         $gray-400;
+$pagination-disabled-bg:            lighten($pagination-bg,5%);
+$pagination-disabled-border-color:  lighten($pagination-bg,5%);
 
 // Cards
-
+$card-bg:                           $gray-200;
 $card-spacer-x:                     $spacer;
-$card-border-color:                 $gray-200;
-$card-cap-bg:                       $white;
+$card-border-color:                 lighten($gray-300,3%);
+$card-cap-bg:                       $gray-300;
 
-$card-box-shadow:                   0 0 35px 0 rgba(154,161,171,.15);
+$card-box-shadow:                   0 0 35px 0 rgba(49,57,66,.5);
+
 
 // Tooltips
 
-$tooltip-font-size:                 13px;
-$tooltip-color:                     $gray-100;
-$tooltip-bg:                        $gray-800;
+$tooltip-font-size:                 14px;
+$tooltip-color:                     $gray-200;
+$tooltip-bg:                        $gray-700;
 $tooltip-border-radius:             0.2rem;
 $tooltip-padding-y:                 .4rem;
 $tooltip-padding-x:                 .8rem;
@@ -495,12 +532,15 @@ $tooltip-arrow-color:               $tooltip-bg;
 
 // Popovers
 
-$popover-border-color:              $gray-300;
-
-$popover-header-bg:                 $gray-100;
+$popover-border-color:              $gray-700;
+$popover-bg:                        $gray-700;
+$popover-border-color:              $gray-700;
+$popover-header-bg:                 lighten($popover-bg,2.5%);
+$popover-header-color:              $gray-200;
 $popover-header-padding-y:          .7rem;
 $popover-header-padding-x:          .8rem;
-
+$popover-body-color:                $gray-200;
+$popover-arrow-color:               $gray-700;
 
 // Badges
 
@@ -509,24 +549,40 @@ $badge-font-weight:                 $font-weight-bold;
 
 // Modals
 
+$modal-content-bg:                  $gray-300;
 $modal-content-border-color:        transparent;
 $modal-content-border-radius:       0.2rem;
 $modal-content-border-width:        0;
-$modal-backdrop-bg:                 $gray-900;
-$modal-backdrop-opacity:            .7;
+$modal-backdrop-bg:                 $gray-500;
+$modal-backdrop-opacity:            .8;
+$modal-header-border-color:         lighten($gray-300,5%);
+$modal-footer-border-color:         lighten($gray-300,5%);
 
 
 // Progress bars
-
-$progress-bar-bg:                   theme-color("success");
+$progress-bg:                       $gray-300;
+$progress-bar-bg:                   theme-color("primary");
 
 
 // List group
 
-$list-group-border-color:           $gray-200;
+$list-group-bg:                     $card-bg;
+$list-group-border-color:           lighten($gray-300,3%);
 $list-group-active-bg:              $component-active-bg;
 $list-group-active-border-color:    $component-active-bg;
-$list-group-disabled-bg:            lighten($gray-100,2%);
+$list-group-action-color:           $gray-500;
+$list-group-action-hover-color:     $gray-500;
+$list-group-hover-bg:               $gray-100;
+$list-group-action-active-color:    $gray-700;
+$list-group-action-active-bg:       $gray-100;
+
+$list-group-disabled-color:         $gray-400;
+$list-group-disabled-bg:            $gray-100;
+
+// Image thumbnails
+
+$thumbnail-bg:                      $gray-300;
+$thumbnail-border-color:            $gray-300;
 
 
 // Breadcrumbs
@@ -543,10 +599,13 @@ $breadcrumb-active-color:           $gray-500;
 
 // Close
 
+$close-color:                       $gray-800;
 $close-text-shadow:                 none;
 $close-font-size:                   $font-size-base * 1.5;
 
 
 // Code
 
-$code-color:                        $pink;
+$code-color:                        $cyan;
+
+$pre-color:                         $gray-500;
