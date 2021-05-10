@@ -15,7 +15,10 @@ var FOLDER_PATHS = {
     baseAssets: "src/assets/", // base assets
 };
 
+/*
 const selectedDemo = (args['demo'] ? (AVAILABLE_DEMOS.indexOf(args['demo']) >= 0 ? args['demo'] : null): null) ? args['demo'] : DEFAULT_DEMO;
+*/
+const selectedDemo = DEFAULT_DEMO;
 
 function getSrcFolderPath() {
     return FOLDER_PATHS.baseSrc + selectedDemo + "/";
