@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Home Page</title>
+        <title>Starter page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- App favicon -->
@@ -16,7 +16,6 @@
         <!-- App css -->
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
-        <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
        
 
     </head>
@@ -61,7 +60,7 @@
                             </a>
                             <ul class="side-nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="branch.html">Branch View</a>
+                                    <a href="dashboard-analytics.html">Branch View</a>
                                 </li>
                                 <li>
                                     <a href="dashboard-crm.html">Standard View</a>
@@ -340,111 +339,56 @@
                     <div class="container-fluid">
 
                         <!-- start page title -->
-                        <div class="row align-items-center">
-                            <div class="col-6">
+                        <div class="row">
+                            <div class="col-12">
                                 <div class="page-title-box">
-                                    <h3 class="page-title"> Main Status </h3>
+                                    
+                                    <h4 class="page-title">Dashboard</h4>
                                 </div>
                             </div>
-                             
                         </div>
+                        <!-- end page title -->
 
-
-                        <div class="col-xl-12">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-6">
 
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        
                                         <div class="card widget-flat">
                                             <div class="card-body">
-                                               <!--  <h5 style=text-align:left>Network Settings</h3> -->
+                                                <div class="float-right">
+                                                    <i class="mdi mdi-account-multiple widget-icon"></i>
+                                                </div>
+                                                <h5 class="text-muted font-weight-normal mt-0" title="Number of Customers">Customers</h5>
+                                                <h3 class="mt-3 mb-3">36,254</h3>
                                                 <p class="mb-0 text-muted">
-                                                    <span class="mr-2 font-weight-bold">Model:</span>
-                                                    <span id="devmodel" class="text-nowrap">iMMC</span>
-                                                        
-                                                </p>
-                                                <p class="mb-0 text-muted">
-                                                    <span class="mr-2 font-weight-bold">Name:</span>
-                                                    <span id="devname" class="text-nowrap">iMMC</span>
-                                                        
-                                                </p>
-                                                <p class="mb-0 text-muted">
-                                                    <span class="mr-2 font-weight-bold">Location:</span>
-                                                    <span id="devlocation" class="text-nowrap">Location</span>
-                                                        
-                                                </p>
-                                                <p class="mb-0 text-muted">
-                                                    <span class="mr-2 font-weight-bold">Version:</span>
-                                                    <span id="firmwareversion" class="text-nowrap">1.0</span>
-                                                        
-                                                </p>
-                                                <p class="mb-0 text-muted">
-                                                    <span class="mr-2 font-weight-bold">Date:</span>
-                                                    <span id="date" class="text-nowrap"></span>
-                                                        
-                                                </p>
-                                                <p class="mb-0 text-muted">
-                                                    <span class="mr-2 font-weight-bold">LAN MAC:</span>
-                                                    <span id="MAC" class="text-nowrap"></span>
-                                                        
-                                                </p>
-                                                <p class="mb-0 text-muted">
-                                                    <span class="mr-2 font-weight-bold">USB Used Space:</span>
-                                                    <span id="USB" class="text-nowrap">
-														<div class="progress">
-															<div class="progress-bar bg-primary" role="progressbar" style="width: 54%" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100">54</div>
-															</div>
-														</div>
-                                                    </span>
-                            
-                                                        
+                                                    <span class="text-success mr-2"><i class="mdi mdi-arrow-up-bold"></i> 5.27%</span>
+                                                    <span class="text-nowrap">Since last month</span>  
                                                 </p>
                                             </div> <!-- end card-body-->
-                                        </div> <!-- end card widget-->
-                                    </div> <!-- end col -->
-                                </div> <!-- end of row -->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col-->
 
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        
+                                    <div class="col-lg-6">
                                         <div class="card widget-flat">
                                             <div class="card-body">
-                                               <h5 style=text-align:left>Smart Port 1</h5>
-                                               <span id = "SP1Status" class="mr-2 font-weight-bold">CONNECTED</span><br>
-                                               <span ><img id = "SP1image" src="assets/images/card.png" alt=""></span>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end of card -->
-                                    <div class="col-lg-3">
-                                        
-                                        <div class="card widget-flat">
-                                            <div class="card-body">
-                                               <h5 style=text-align:left>Smart Port 2</h5>
-                                               <span id = "SP2Status" class="mr-2 font-weight-bold"></span><br>
-                                               <span ><img id = "SP2image" src="" alt=""></span>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end of card -->
-                                    <div class="col-lg-3">
-                                        
-                                        <div class="card widget-flat">
-                                            <div class="card-body">
-                                               <h5 style=text-align:left>Smart Port 3</h5>
-                                               <span id = "SP3Status" class="mr-2 font-weight-bold"></span><br>
-                                               <span ><img id = "SP3image" src="" alt=""></span>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end of card -->
-                                    <div class="col-lg-3">
-                                        
-                                        <div class="card widget-flat">
-                                            <div class="card-body">
-                                               <h5 style=text-align:left>Smart Port 4</h5>
-                                               <span id = "SP4Status" class="mr-2 font-weight-bold"></span><br>
-                                               <span ><img id = "SP4image" src="" alt=""></span>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end of card -->
+                                                <div class="float-right">
+                                                    <i class="mdi mdi-cart-plus widget-icon"></i>
+                                                </div>
+                                                <h5 class="text-muted font-weight-normal mt-0" title="Number of Orders">Orders</h5>
+                                                <h3 class="mt-3 mb-3">5,543</h3>
+                                                <p class="mb-0 text-muted">
+                                                    <span class="text-danger mr-2"><i class="mdi mdi-arrow-down-bold"></i> 1.08%</span>
+                                                    <span class="text-nowrap">Since last month</span>
+                                                </p>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col-->
+                                </div> <!-- end row -->
+
+                               
+                        </div>
+                        <!-- end row -->
 
                     </div>
                     <!-- container -->
@@ -457,7 +401,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
-                                <script>document.write(new Date().getFullYear())</script> © AnordMardix.com
+                                <script>document.write(new Date().getFullYear())</script> © Hyper - Coderthemes.com
                             </div>
                             <div class="col-md-6">
                                 <div class="text-md-right footer-links d-none d-md-block">

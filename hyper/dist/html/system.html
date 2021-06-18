@@ -62,7 +62,7 @@
                             </a>
                             <ul class="side-nav-second-level" aria-expanded="false">
                                 <li>
-                                    <a href="dashboard-analytics.html">Branch View</a>
+                                    <a href="branch.html">Branch View</a>
                                 </li>
                                 <li>
                                     <a href="dashboard-crm.html">Standard View</a>
@@ -364,7 +364,9 @@
                                     <div class="col-lg-3">
                                         <div class="card widget-flat">
                                             <div class="card-body">
-                                                
+                                                <div class="float-right">
+                                                    <button class="btn" data-toggle="modal" data-target="#networkhelpModal" ><i class="dripicons-question"></i></button>
+                                                </div>
                                                 <h3 class="text-muted font-weight-bold mt-0" title="Network Settings">Network</h5>
                                                 <p class="mb-0 text-muted">
                                                     <span class="mr-2 font-weight-normal">DHCP:</span>
@@ -612,14 +614,14 @@
                                                 <h3 class="text-muted font-weight-bold mt-0" title="Number of Orders">Miscellaneous</h5>
                                                 <p class="mb-0 text-muted">
                                                     <span  class="text-nowrap">
-                                                        <button class="btn btn-secondary mt-1 mb-1 btn-rounded" type=button data-toggle="modal" data-target=#SaveSettingsformModal>Save Settings</button>
+                                                        <button class="btn btn-primary mt-1 mb-1 btn-rounded" type=button data-toggle="modal" data-target=#SaveSettingsformModal>Save Settings</button>
                                                     </span>
                                                 </p>
                                                 
                                                 <p class="mb-0 text-muted">
                                                    <!--  <span class="mr-2 font-weight-bold">Update Firmware:</span><br> -->
                                                     <span  class="text-nowrap">
-                                                        <button class="btn btn-secondary mt-1 mb-1 btn-rounded" type=button data-toggle="modal" data-target=#firmwareupdateformModal>Update Firmware</button>
+                                                        <button class="btn btn-primary mt-1 mb-1 btn-rounded" type=button data-toggle="modal" data-target=#firmwareupdateformModal>Update Firmware</button>
                                                     </span>
                                                 </p>
                                                 <p>
@@ -639,7 +641,7 @@
                                                 <p class="mb-0 text-muted">
                                                    <!--  <span class="mr-2 font-weight-bold">Restart Core Module:</span><br> -->
                                                     <span  class="text-nowrap">
-                                                        <button class="btn btn-secondary mt-1 mb-1 btn-rounded" type=button id="amcustom-btn" data-toggle="modal" data-target=#ResetformModal>Restart Core Module</button>
+                                                        <button class="btn btn-primary mt-1 mb-1 btn-rounded" type=button id="amcustom-btn" data-toggle="modal" data-target=#ResetformModal>Restart Core Module</button>
                                                     </span>
                                                 </p>
                                                 
@@ -719,6 +721,7 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
+
 
 
         </div>
@@ -818,6 +821,52 @@
         <div class="rightbar-overlay"></div>
         <!-- /Right-bar -->
 
+<div id="networkhelpModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="text-center mt-2 mb-4">
+                    <h3>Network Help</h3>
+                </div>
+                
+                <p class="mb-0 text-muted">
+						<span class="mr-2 font-weight-bold">DHCP:</span><br>
+						<span > Enable or Disable<label>
+						<br><br>	
+				</p>
+					<p class="mb-0 text-muted">
+						<span class="mr-2 font-weight-bold">IP Address:</span><br>
+						<span  >Example 192.168.5.77</span>
+						<br><br>
+					</p>
+					<p class="mb-0 text-muted">
+						<span class="mr-2 font-weight-bold">NetMask:</span><br>
+						<span  class="text-nowrap">Example 255.255.255.0</span>
+						<br><br>
+					</p>
+					<p class="mb-0 text-muted">
+						<span class="mr-2 font-weight-bold">Gateway:</span><br>
+						<span  class="text-nowrap">Example 192.168.5.1</span>
+						<br><br>
+					</p>
+					<p class="mb-0 text-muted">
+						<span class="mr-2 font-weight-bold">DNS:</span><br>
+						<span  class="text-nowrap">Example 8.8.8.8</span>
+						<br><br>
+					</p>
+					<p class="mb-0 text-muted">
+						<span class="mr-2 font-weight-bold">NTP Time Server:</span><br>
+						<span  class="text-nowrap">Example time.google.com</span>
+						<br><br>
+					</p>
+
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
         <!-- bundle -->
         <script src="assets/js/vendor.min.js"></script>
         <script src="assets/js/app.min.js"></script>
