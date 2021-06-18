@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Branch Circuit View</title>
+        <title>Starter page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- App favicon -->
@@ -17,18 +17,6 @@
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
        
-	   <style>
-.btn-circuitname {
-	padding-left: 0px;
-	padding-right: 0px;
-	padding-top: 0px;
-	padding-bottom: 0px;
-}
-
-.table .progress {
-    margin-bottom: 0 !important;
-}
-</style>
 
     </head>
 
@@ -48,7 +36,7 @@
                     <!-- Start Content-->
                     <div class="container-fluid">
 
-                        <!-- start top row for title -->
+                        <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
@@ -57,11 +45,12 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- end top row -->
-						
-						<!-- start row of cards -->
+                        <!-- end page title -->
+
                         <div class="row">
-                            
+                            <div class="col-lg-12">
+
+                                <div class="row">
                                     <div class="col-lg-3">
                                         <div class="card widget-flat">
                                             <div class="card-body">
@@ -108,7 +97,7 @@
                                         </div> <!-- end card-->
                                     </div> <!-- end col-->
                                 
-									<div class="col-lg-3">
+<div class="col-lg-3">
                                         <div class="card widget-flat">
                                             <div class="card-body">
                                                 <div class="float-right">
@@ -153,18 +142,13 @@
                                             </div> <!-- end card-body-->
                                         </div> <!-- end card-->
                                     </div> <!-- end col-->
-								</div> <!-- end row-->
-                                
+                                </div> <!-- end row -->
             <!-- ============================================================== -->
 			<!-- End of Cards at top -->
-            <!-- ============================================================== -->
-
-			<!-- ============================================================== -->
-			<!-- Start Table of Data -->
-            <!-- ============================================================== -->
-			
-			<div class="row">
-                <div class="col-12">
+            <!-- ============================================================== -->    
+            <div class="row">
+				<div class="col-lg-12">  
+				
 					<table class="table table-sm table-hover table-bordered table-centered mb-0">
 						 <thead class="thead-dark">
 							<tr>
@@ -184,10 +168,10 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td><i class="mdi mdi-circle text-danger"></i>1</td>
+								<td class="bg-success text-white">1</td>
 								<td><button class="btn btn-circuitname" data-toggle="modal" data-target="#name1Modal" >Circuit 1 Name</button></td>
 								<td style=font-size=20px>20</td>
-								<td style=font-size=20px>12.3</td>
+								<td><span class="badge badge-success">8.32</span></td>
 								<td>
 									<div class="progress progress">
 										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
@@ -196,30 +180,23 @@
 								<td style=font-size=20px>123.4</td>
 								<td style=font-size=20px>234.5</td>
 								<td>
-									<div>
-									<span>
-										8.32
-										<div class="progress progress">
-											<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
-										</div>
-									</span>
-									
-									
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
 									</div>
 								</td>
-								<td style=font-size=20px>3.4</td>
+								<td><span class="badge badge-success">8</span></td>
 								<td style=font-size=20px>20</td>
 								<td><button class="btn btn-circuitname" data-toggle="modal" data-target="#name1Modal" >Circuit 1 Name</button></td>
-								<td><i class="mdi mdi-circle text-light"></i>2</td>
-							</tr>	
+								<td class="bg-success text-white">2</td>
+							</tr>
 							<tr>
-								<td><i class="mdi mdi-circle text-light"></i>3</td>
-								<td><button class="btn btn-circuitname" data-toggle="modal" data-target="#name1Modal" >Circuit 3 Name</button></td>
-								<td style=font-size=20px>20</td>
-								<td style=font-size=20px>12.3</td>
+								<td class="bg-warning text-white">3</td>
+								<td>Circuit 3 Name</td>
+								<td>30</td>
+								<td><span class="badge badge-warning">27</span></td>
 								<td>
 									<div class="progress progress">
-										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
+										<div class="progress-bar progress-lg bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70</div>
 									</div>
 								</td>
 								<td style=font-size=20px>123.4</td>
@@ -229,20 +206,222 @@
 										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
 									</div>
 								</td>
-								<td style=font-size=20px>3.4</td>
+								<td><span class="badge badge-success">8</span></td>
 								<td style=font-size=20px>20</td>
 								<td><button class="btn btn-circuitname" data-toggle="modal" data-target="#name1Modal" >Circuit 4 Name</button></td>
-								<td><i class="mdi mdi-circle text-danger"></i>4</td>
+								<td class="bg-success text-white">4</td>
 							</tr>
+							<tr>
+								<td class="bg-danger text-white">5</td>
+								<td>Circuit 5 Name</td>
+								<td>40</td>
+								<td><span class="badge badge-danger">39</span></td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-danger" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90</div>
+									</div>
+								</td>
+								<td style=font-size=20px>123.4</td>
+								<td style=font-size=20px>234.5</td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
+									</div>
+								</td>
+								<td><span class="badge badge-success">8</span></td>
+								<td style=font-size=20px>20</td>
+								<td><button class="btn btn-circuitname" data-toggle="modal" data-target="#name1Modal" >Circuit 6 Name</button></td>
+								<td class="bg-success text-white">6</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>Circuit 7 Name</td>
+								<td>50</td>
+								<td>21</td>
+								<!-- <td><i class="mdi mdi-circle text-success"></i>21</td> -->
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70</div>
+									</div>
+								</td>
+								<td style=font-size=20px>123.4</td>
+								<td style=font-size=20px>234.5</td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
+									</div>
+								</td>
+								<td><span class="badge badge-success">8</span></td>
+								<td style=font-size=20px>20</td>
+								<td><button class="btn btn-circuitname" data-toggle="modal" data-target="#name1Modal" >Circuit 8 Name</button></td>
+								<td class="bg-success text-white">8</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>Circuit 9 Name</td>
+								<td>60</td>
+								<<td><i class="mdi mdi-circle text-warning"></i>52</td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
+									</div>
+								</td>
+								<td style=font-size=20px>123.4</td>
+								<td style=font-size=20px>234.5</td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
+									</div>
+								</td>
+								<td><span class="badge badge-success">8</span></td>
+								<td style=font-size=20px>20</td>
+								<td><button class="btn btn-circuitname" data-toggle="modal" data-target="#name1Modal" >Circuit 10 Name</button></td>
+								<td class="bg-success text-white">10</td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>Circuit 11 Name</td>
+								<td>70</td>
+								<td><i class="mdi mdi-circle text-danger"></i>69</td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
+									</div>
+								</td>
+								<td style=font-size=20px>123.4</td>
+								<td style=font-size=20px>234.5</td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
+									</div>
+								</td>
+								<td><span class="badge badge-success">8</span></td>
+								<td style=font-size=20px>20</td>
+								<td><button class="btn btn-circuitname" data-toggle="modal" data-target="#name1Modal" >Circuit 12 Name</button></td>
+								<td class="bg-success text-white">12</td>
+							</tr>
+							<tr>
+								<td>13</td>
+								<td>Circuit 13 Name</td>
+								<td>80</td>
+								<td><i class="mdi mdi-circle text-danger"></i>69</td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70</div>
+									</div>
+								</td>
+								<td style=font-size=20px>123.4</td>
+								<td style=font-size=20px>234.5</td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
+									</div>
+								</td>
+								<td><span class="badge badge-success">8</span></td>
+								<td style=font-size=20px>20</td>
+								<td><button class="btn btn-circuitname" data-toggle="modal" data-target="#name1Modal" >Circuit 14 Name</button></td>
+								<td class="bg-success text-white">14</td>
+							</tr>
+							<tr>
+								<td>15</td>
+								<td>Circuit 15 Name</td>
+								<td>90</td>
+								<td><i class="mdi mdi-circle text-danger"></i>69</td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
+									</div>
+								</td>
+								<td style=font-size=20px>123.4</td>
+								<td style=font-size=20px>234.5</td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
+									</div>
+								</td>
+								<td><span class="badge badge-success">8</span></td>
+								<td style=font-size=20px>20</td>
+								<td><button class="btn btn-circuitname" data-toggle="modal" data-target="#name1Modal" >Circuit 16 Name</button></td>
+								<td class="bg-success text-white">16</td>
+							</tr>
+							<tr>
+								<td>17</td>
+								<td>Circuit 17 Name</td>
+								<td>100</td>
+								<td><span class="badge badge-success">8.32</span></td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-danger" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90</div>
+									</div>
+								</td>
+								<td style=font-size=20px>123.4</td>
+								<td style=font-size=20px>234.5</td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
+									</div>
+								</td>
+								<td><span class="badge badge-success">8</span></td>
+								<td style=font-size=20px>20</td>
+								<td><button class="btn btn-circuitname" data-toggle="modal" data-target="#name1Modal" >Circuit 18 Name</button></td>
+								<td class="bg-success text-white">18</td>
+							</tr>
+							<tr>
+								<td>19</td>
+								<td>Circuit 19 Name</td>
+								<td>30</td>
+								<td><span class="badge badge-success">8.32</span></td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70</div>
+									</div>
+								</td>
+								<td style=font-size=20px>123.4</td>
+								<td style=font-size=20px>234.5</td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
+									</div>
+								</td>
+								<td><span class="badge badge-success">8</span></td>
+								<td style=font-size=20px>20</td>
+								<td><button class="btn btn-circuitname" data-toggle="modal" data-target="#name1Modal" >Circuit 20 Name</button></td>
+								<td class="bg-success text-white">20</td>
+							</tr>
+							<tr>
+								<td>21</td>
+								<td>Circuit 21 Name</td>
+								<td>30</td>
+								<td><span class="badge badge-success">8.32</span></td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
+									</div>
+								</td>
+								<td style=font-size=20px>123.4</td>
+								<td style=font-size=20px>234.5</td>
+								<td>
+									<div class="progress progress">
+										<div class="progress-bar progress-lg bg-success" role="progressbar" style="width: 15%" aria-valuenow="20" aria-valuemin="15" aria-valuemax="100">0</div>
+									</div>
+								</td>
+								<td><span class="badge badge-success">8</span></td>
+								<td style=font-size=20px>20</td>
+								<td><button class="btn btn-circuitname" data-toggle="modal" data-target="#name1Modal" >Circuit 22 Name</button></td>
+								<td class="bg-success text-white">22</td>
+							</tr>
+						</tbody>
 					</table>
+					
+				
 				
 				</div> <!-- end col-->				
 			</div> <!-- end row -->
-        </div>  <!-- container -->
-                   
+                    </div>
+                    <!-- container -->
 
-    </div> 	<!-- content -->
-                
+                </div>
+                <!-- content -->
 
                 @@include('./partials/footer.html')
 
@@ -258,7 +437,15 @@
 
         @@include('./partials/right-sidebar.html')
 
+<style>
+.btn-circuitname {
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
 
+</style>
 
 <div id="name1Modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">

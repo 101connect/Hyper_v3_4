@@ -48,7 +48,7 @@
                                         
                                     </div> -->
                                    <button class="btn btn-primary mt-2 mb-2 btn-rounded" type=button id="updatesettings-btn" data-toggle="modal" data-target=#ResetformModal>Update Settings</button>
-								   <button class="btn btn-primary mt-2 mb-2 btn-rounded float-right" type=button id="helpsystem-btn" data-toggle="modal" data-target=#HelpSystem>Help?</button>
+								   <!-- <button class="btn btn-primary mt-2 mb-2 btn-rounded float-right" type=button id="helpsystem-btn" data-toggle="modal" data-target=#HelpSystem>Help?</button> -->
                                     <!-- <h4 class="page-title">System Settings</h4> -->
                                 </div>
                             </div>
@@ -104,7 +104,9 @@
                                     <div class="col-lg-3">
                                         <div class="card widget-flat">
                                             <div class="card-body">
-                                                
+                                                <div class="float-right">
+                                                    <button class="btn" data-toggle="modal" data-target="#protocolhelpModal" ><i class="dripicons-question"></i></button>
+                                                </div>
                                                 <h3 class="text-muted font-weight-bold mt-0" title="Protocol Settings">Protocol</h5>
                                                 <p class="mb-0 text-muted">
                                                     <span class="mr-2 font-weight-normal">Modbus Slave ID: (1-254)</span><br>
@@ -154,7 +156,9 @@
                                     <div class="col-lg-3">
                                         <div class="card widget-flat">
                                             <div class="card-body">
-                                                
+                                                <div class="float-right">
+                                                    <button class="btn" data-toggle="modal" data-target="#generalhelpModal" ><i class="dripicons-question"></i></button>
+                                                </div>
                                                 <h3 class="text-muted font-weight-bold mt-0" title="Number of Orders">General</h5>
                                                 <p class="mb-0 text-muted">
                                                     <span class="mr-2 font-weight-normal">Demand Interval (0-3600 seconds):</span><br>
@@ -205,7 +209,9 @@
                                     <div class="col-lg-3">
                                         <div class="card widget-flat">
                                             <div class="card-body">
-                                                
+                                                <div class="float-right">
+                                                    <button class="btn" data-toggle="modal" data-target="#voltagealarmhelpModal" ><i class="dripicons-question"></i></button>
+                                                </div>
                                                 <h3 class="text-muted font-weight-bold mt-0" title="Protocol Settings">Voltage Alarm Settings</h5>
                                                     
                                                     <p class="mb-0 text-muted">
@@ -249,7 +255,9 @@
                                     <div class="col-lg-3">
                                         <div class="card widget-flat">
                                             <div class="card-body">
-                                                
+                                                <div class="float-right">
+                                                    <button class="btn" data-toggle="modal" data-target="#currentalarmlatchinghelpModal" ><i class="dripicons-question"></i></button>
+                                                </div>
                                                 <h3 class="text-muted font-weight-bold mt-0" title="Network Settings">Curent Alarms Latching</h5>
                                                  <p class="mb-0 text-muted">
                                                         <span class="mr-2 font-weight-normal">High Threshold Latching (V):</span><br>
@@ -279,7 +287,9 @@
                                     <div class="col-lg-3">
                                         <div class="card widget-flat">
                                             <div class="card-body">
-                                                
+                                                 <div class="float-right">
+                                                    <button class="btn" data-toggle="modal" data-target="#currentalarmnonlatchinghelpModal" ><i class="dripicons-question"></i></button>
+                                                </div>
                                                  <h3 class="text-muted font-weight-bold mt-0" title="Network Settings">Curent Alarms Non-Latching</h5>
                                                  <p class="mb-0 text-muted">
                                                         <span class="mr-2 font-weight-normal">High Threshold Non-Latching (V):</span><br>
@@ -308,7 +318,9 @@
                                     <div class="col-lg-3">
                                         <div class="card widget-flat">
                                             <div class="card-body">
-                                                
+                                                <div class="float-right">
+                                                    <button class="btn" data-toggle="modal" data-target="#MiscellaneoushelpModal" ><i class="dripicons-question"></i></button>
+                                                </div>
                                                 <h3 class="text-muted font-weight-bold mt-0" title="Number of Orders">Miscellaneous</h5>
                                                 <p class="mb-0 text-muted">
                                                     <span  class="text-nowrap">
@@ -351,31 +363,40 @@
                                     <div class="col-lg-3">
                                         <div class="card widget-flat">
                                             <div class="card-body">
-                                                
-                                                <h3 class="text-muted font-weight-bold mt-0" title="Protocol Settings">More Settings</h5>
+                                                <div class="float-right">
+                                                    <button class="btn" data-toggle="modal" data-target="#ModbusRegisterhelpModal" ><i class="dripicons-question"></i></button>
+                                                </div>
+                                                <h3 class="text-muted font-weight-bold mt-0" title="Protocol Settings">Modbus Register</h5>
                                                     
                                                     <p class="mb-0 text-muted">
-                                                        <span class="mr-2 font-weight-normal">Input</span><br>
+                                                        <span class="mr-2 font-weight-normal">Register:</span><br>
                                                         <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
                                                     </p>
                                                     <p class="mb-0 text-muted">
-                                                       <span class="mr-2 font-weight-normal">Input</span><br>
+                                                    
+                                                    <span id="regreadwrite" class="text-nowrap"><label>
+                                                        <label>
+                                                            <input id=mbreadradio name=mbreadwrite type=radio>Read
+                                                        </label>
+                                                        <label>
+                                                            <input id=mbwriteradio name=mbreadwrite  type=radio>Write
+                                                        </label>
+														<br>
+													
+                                                        <span class="mr-2 font-weight-normal">Value:</span><br>
                                                         <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
+                                                    </p>
+													<p>
+                                                    
+													<span  class="text-nowrap">
+                                                        <button class="btn btn-primary mt-1 mb-1 btn-rounded" type=button id="mbreadwrite-btn" onclick=mbreadwrite()>Submit</button>
+                                                    </span>
+													</p>
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="mr-2 font-weight-normal">Result:</span><br>
+                                                        <span  class="text-nowrap" id="valuehex">0x1234</span>
                                                     </p>
                                                     
-                                                    <p class="mb-0 text-muted">
-                                                        <span class="mr-2 font-weight-normal">Input</span><br>
-                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
-                                                    </p>
-                                                    <p class="mb-0 text-muted">
-                                                        <span class="mr-2 font-weight-normal">Input</span><br>
-                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
-                                                    </p>
-                                                    <br>
-                                                    <p class="mb-0 text-muted">
-                                                        <span class="mr-2 font-weight-normal">Input</span><br>
-                                                        <span  class="text-nowrap"><input id=SystemVoltage class=form-control style=width:125px;height:25px;font-size:small></span>
-                                                    </p>
 
                                                 
                                                 
@@ -409,53 +430,10 @@
         <!-- END wrapper -->
 
         @@include('./partials/right-sidebar.html')
+		
+		@@include('./partials/modal-help-system.html')
 
-<div id="networkhelpModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="text-center mt-2 mb-4">
-                    <h3>Network Help</h3>
-                </div>
-                
-                <p class="mb-0 text-muted">
-						<span class="mr-2 font-weight-bold">DHCP:</span><br>
-						<span > Enable or Disable<label>
-						<br><br>	
-				</p>
-					<p class="mb-0 text-muted">
-						<span class="mr-2 font-weight-bold">IP Address:</span><br>
-						<span  >Example 192.168.5.77</span>
-						<br><br>
-					</p>
-					<p class="mb-0 text-muted">
-						<span class="mr-2 font-weight-bold">NetMask:</span><br>
-						<span  class="text-nowrap">Example 255.255.255.0</span>
-						<br><br>
-					</p>
-					<p class="mb-0 text-muted">
-						<span class="mr-2 font-weight-bold">Gateway:</span><br>
-						<span  class="text-nowrap">Example 192.168.5.1</span>
-						<br><br>
-					</p>
-					<p class="mb-0 text-muted">
-						<span class="mr-2 font-weight-bold">DNS:</span><br>
-						<span  class="text-nowrap">Example 8.8.8.8</span>
-						<br><br>
-					</p>
-					<p class="mb-0 text-muted">
-						<span class="mr-2 font-weight-bold">NTP Time Server:</span><br>
-						<span  class="text-nowrap">Example time.google.com</span>
-						<br><br>
-					</p>
 
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
         <!-- bundle -->
         <script src="assets/js/vendor.min.js"></script>
         <script src="assets/js/app.min.js"></script>
